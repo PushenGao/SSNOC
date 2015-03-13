@@ -1,0 +1,12 @@
+div.container.text-center.col-sm-12
+  br
+  h3 SSNoC Wall
+  div.row
+    div.col-sm-12
+        div.well
+            ul.list-unstyled.scrollable-chat#chatbox
+  div.row
+    div.col-sm-10
+        input.form-control(name="message", placeholder="Write a message to the wall")#message
+    div.col-sm-2
+        button.btn.btn-primary(onclick="postToWall()") Submit

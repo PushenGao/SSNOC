@@ -1,0 +1,55 @@
+div.container.text-center.col-sm-12
+    br
+    h3 Search Result
+    div.row
+        div.col-sm-12
+            div
+                if usernames
+                    table.table.table-bordered#usernames
+                      thead
+                        tr
+                          th(style="text-align: center") UserNames
+                      tbody
+                        each user in usernames
+                          tr
+                            td #{user.userName}
+                if statuses
+                    br
+                    table.table.table-bordered#statuses
+                      thead
+                        tr
+                          th(style="text-align: center") Status Codes
+                      tbody
+                        each user in statuses
+                          tr
+                            td #{user.userName} - #{user.lastStatusCode}
+                if announcements
+                    br
+                    table.table.table-bordered#announcements
+                      thead
+                        tr
+                          th(style="text-align: center") Announcements
+                      tbody
+                        each announcement in announcements
+                          tr
+                            td (#{announcement.postedAt}) #{announcement.author} : #{announcement.content}
+                if wallposts
+                    br
+                    table.table.table-bordered#wallposts
+                      thead
+                        tr
+                          th(style="text-align: center") Wall Posts
+                      tbody
+                        each wallpost in wallposts
+                          tr
+                            td (#{wallpost.postedAt}) #{wallpost.author} : #{wallpost.content}
+                if privates
+                    br
+                    table.table.table-bordered#privates
+                      thead
+                        tr
+                          th(style="text-align: center") Private Messages
+                      tbody
+                        each private in privates
+                          tr
+                            td (#{private.postedAt}) #{private.author} : #{private.content}

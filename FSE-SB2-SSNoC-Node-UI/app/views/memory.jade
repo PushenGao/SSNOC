@@ -1,0 +1,13 @@
+div.container.text-center.col-sm-12
+  h3 Measure Memory
+  div.row
+    div.col-sm-12
+        div.well
+            div(style="display: none")#recording #{recording}
+            button.btn.btn-info#recordBtn
+            br
+            br
+            br
+            button.btn.btn-info(onClick="displayMemory()") Display Measurements
+            br
+            div#results

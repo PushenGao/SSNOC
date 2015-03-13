@@ -1,0 +1,14 @@
+div.container.text-center.col-sm-12
+  h3 Measure Performance
+  div.row
+    div.col-sm-12
+        div.well
+            div(style="display: none")#recordingPerf #{recordingPerf}
+            div.col-lg-4.col-md-offset-4
+                input.form-control(name="time", placeholder="Enter Recording Time")#rec_time
+            br
+            br
+            br
+            div(style="display: none")#recordingPerf #{recordingPerf}
+            button.btn.btn-info#recordBtnPerf
+            div#results

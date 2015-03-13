@@ -1,0 +1,22 @@
+{
+  "name": "SSNoC",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "connect-flash": "~0.1.1",
+    "express": "3.1.0",
+    "jade": "*",
+    "loadtest": "^1.2.4",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "request": "2.36.0",
+    "socket.io": "~0.9.6",
+    "underscore": "*",
+    "peer": "*"
+  },
+  "main": "server.js"
+}

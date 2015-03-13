@@ -1,0 +1,28 @@
+doctype html
+html
+  include includes/head.jade
+  script(src='/js/jquery.cookie.js')
+  title SSNoC - Welcome
+  body
+    include includes/navbar.jade
+    div.container.text-center
+      br
+      h3 Welcome to the Survivable Social Network on a Chip!!
+      p 
+        | Please take a moment to share your status with other Citizens. 
+        | Your status can be selected from the "Status" menu at the top right
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th(style="text-align: center") Status Message
+            th(style="text-align: center") Explanation
+        tr
+            td Green
+            td I am OK, I do not need help
+        tr
+            td Yellow
+            td I need help, but this is not a life threatening emergency
+        tr
+            td Emergency
+            td I need help now, as this is a life threatening emergency
+      a.btn.btn-info(href='/ssnoc/#people') People Directory

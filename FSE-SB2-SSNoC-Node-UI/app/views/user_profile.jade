@@ -1,0 +1,35 @@
+br
+div.col-sm-offset-2
+    h2 User Management
+div.row
+    div.row.col-sm-5.col-sm-offset-2
+        form(action='/update_user', method='post')
+            div.form-group
+                input(type="text", class='form-control', name="old_user", style="visibility:hidden;")#old_user
+                label Username
+                input(type="text", class='form-control', name="user")#username
+            div.form-group
+                label Status
+                input(type="text", class='form-control', name="status")#statuscode
+            div.form-group
+                label Password
+                input(type="password", class='form-control', name="password", label="Password")#password
+            div.form-group
+                label Role
+                    select(class='form-control', name="role", id="role")
+                        option
+                            | administrator
+                        option
+                            | coordinator
+                        option
+                            | monitor
+                        option
+                            | citizen
+            div.form-group
+                label Activity Status
+                    select(class='form-control', name="activity", id="activity")
+                        option
+                            | active
+                        option
+                            | inactive
+            button.btn.btn-primary(type="submit") Save

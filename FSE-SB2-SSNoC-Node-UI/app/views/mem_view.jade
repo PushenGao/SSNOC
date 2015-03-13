@@ -1,0 +1,16 @@
+table.table.table-striped.table-bordered
+  thead
+    tr
+      th(style="text-align: center") Timestamp
+      th(style="text-align: center") Used Volatile (kB)
+      th(style="text-align: center") Free Volatile (kB)
+      th(style="text-align: center") Used Non-Volatile (kB)
+      th(style="text-align: center") Free Non-Volatile (kB)
+  tbody
+    each minute in results
+        tr
+        td #{minute.createdAt}
+        td #{minute.usedVolatile}
+        td #{minute.remainingVolatile}
+        td #{minute.usedPersistent}
+        td #{minute.remainingPersistent}

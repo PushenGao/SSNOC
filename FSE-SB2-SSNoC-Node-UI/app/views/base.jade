@@ -1,0 +1,21 @@
+doctype html
+html
+  include includes/head.jade
+  script(src='/js/jquery.cookie.js')
+  script(src='/js/people.js')
+  script(src='/js/message.js')
+  script(src='/js/memory.js')
+  script(src='/js/perf.js')
+  script(src='/js/sna.js')
+  script(src='/js/users.js')
+  script(src='/js/search.js')
+  script(src='/js/jquery.dataTables.min.js')
+  link(rel='stylesheet', href='/css/jquery.dataTables.min.css')
+  title SSNoC
+  body
+    include includes/navbar.jade
+    audio#camera
+    p(style="visibility: hidden")#privilege #{privilege}
+    div.container.text-center.col-sm-6.col-sm-offset-3
+        div#note
+    v.container#hook_point

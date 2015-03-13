@@ -1,0 +1,17 @@
+div.container.col-sm-12
+  br
+  h3 Time Window
+  div
+    form
+      p
+        input(name="date1", type="date")
+        span &nbsp;hour:&nbsp;
+        input(name="hour1", type="number", min="0", max="23")
+      p
+        input(name="date2", type="date")
+        span &nbsp;hour:&nbsp;
+        input(name="hour2", type="number", min="0", max="23")
+      p
+        button(type="button" class="btn btn-info btn-lg" id="snaBtn" onclick="startSna()") Go
+  h3 Result
+  div.sna-result

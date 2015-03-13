@@ -1,0 +1,92 @@
+
+nav.navbar.navbar-default.navbar-fixed-top(role="navigation")#top-navbar
+  div.navbar-header
+    button(class="btn btn-sucess navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse")
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    p.navbar-brand #{title}
+
+
+  div.navbar-collapse.collapse
+    ul.nav.nav-pills.navbar-nav#nav_list
+      li
+        a(href="/ssnoc/#people", onclick="loadPeople()")
+          strong People
+      li
+        a(href="/ssnoc/#wall", onclick="loadWall()")
+          strong Wall
+      li
+        a(href="/ssnoc/#announcement", onclick="loadAnnouncementPage()")
+            strong Announcements
+      if privilege == 'administrator'
+        li
+          a(href="/ssnoc/#users", onclick="loadUsers()")
+              strong Users
+
+      li.dropdown
+        a.dropdown-toggle(href="#", data-toggle="dropdown")
+          strong Status
+        ul.dropdown-menu
+          li.dropdown-header Select your status
+          li
+              a(href="javascript:;", style="float:left", onclick="changeStatus(\"green\")")
+                strong OK
+              img(src="/img/green.png", style="float:right", width=30)
+          li
+              a(href="javascript:;", style="float:left", onclick="changeStatus(\"yellow\")")
+                strong Help
+              img(src="/img/yellow.png", style="float:right", width=30)
+          li
+              a(href="javascript:;", style="float:left", onclick="changeStatus(\"red\")")
+                strong Urgent
+              img(src="/img/red.png", style="float:right", width=30)
+
+      if privilege == 'administrator' || privilege == 'coordinator'
+        li.dropdown
+            a.dropdown-toggle(href="#", data-toggle="dropdown")
+                strong Coordinator
+            ul.dropdown-menu
+                li
+                    a(href="/ssnoc/#sna" onclick="loadSna()")
+                        strong SNA
+      if privilege == 'administrator' || privilege == 'monitor'
+        li.dropdown
+            a.dropdown-toggle(href="#", data-toggle="dropdown")
+                strong Monitor
+            ul.dropdown-menu
+                li
+                    a(href="/ssnoc/#perf" onclick="loadPerf()")
+                        strong Measure Performance
+                li
+                    a(href="/ssnoc/#memory" onclick="loadMemory()")
+                        strong Measure Memory
+      li
+        a(href="/logout")
+            strong Logout
+
+
+    .col-lg-3
+        .input-group
+            input#query.form-control(type='text', name='query', onkeypress="handleKeyPress(event)")
+            .input-group-btn
+                button.btn.btn-info(type='button', tabindex='-1', id="searchBtn", onclick="doSearch()", onkeypress="handleKeyPress(event)") Search
+                button.btn.btn-danger.dropdown-toggle(data-toggle='dropdown', tabindex='-1', aria-expanded='false')
+                    span.caret
+                    span.sr-only Toggle Dropdown
+                ul.dropdown-menu.dropdown-menu-right(role='menu', onkeypress="handleKeyPress(event)")
+                    li(onclick="$('#searchBtn').text('Search'); $('#query').focus();")
+                        a(href='#') Everything
+                    li(onclick="$('#searchBtn').text('Search Users'); $('#query').focus();")
+                        a(href='#') Users
+                    li(onclick="$('#searchBtn').text('Search Statuses'); $('#query').focus();")
+                        a(href='#') Statuses
+                    li(onclick="$('#searchBtn').text('Search Announcements'); $('#query').focus();")
+                        a(href='#') Announcements
+                    li(onclick="$('#searchBtn').text('Search Wallposts'); $('#query').focus();")
+                        a(href='#') Wallposts
+                    li(onclick="$('#searchBtn').text('Search Privates'); $('#query').focus();")
+                        a(href='#') Private Messages
+
+
+
