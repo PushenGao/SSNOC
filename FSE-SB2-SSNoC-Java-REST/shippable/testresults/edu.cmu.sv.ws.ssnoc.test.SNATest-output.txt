@@ -1,0 +1,169 @@
+17:59:36.980 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Enter - method : clearDatabase
+17:59:36.984 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Exit - method : clearDatabase
+17:59:36.985 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Enter - method : createTablesInDB
+17:59:36.985 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Executing query: create table IF NOT EXISTS SSN_USERS ( user_id IDENTITY PRIMARY KEY, user_name VARCHAR(100), password VARCHAR(512), salt VARCHAR(512), created_at VARCHAR(50), modified_at VARCHAR(50), last_status_code VARCHAR(10) )
+17:59:36.986 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Query execution completed with status: false
+17:59:36.986 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Executing query: create table IF NOT EXISTS SSN_STATUS_CRUMBS ( crumb_id IDENTITY PRIMARY KEY, user_name VARCHAR(100), status_code VARCHAR(10), created_at VARCHAR(50) )
+17:59:36.987 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Query execution completed with status: false
+17:59:36.987 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Executing query: create table IF NOT EXISTS SSN_MESSAGE ( message_id IDENTITY PRIMARY KEY, content VARCHAR(1024), author VARCHAR(100), messageType VARCHAR(6), postedAt VARCHAR(100), target VARCHAR(100))
+17:59:36.988 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Query execution completed with status: false
+17:59:36.988 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Executing query: create table IF NOT EXISTS SSN_MEMORY_CRUMBS ( crumb_id IDENTITY PRIMARY KEY, created_at VARCHAR(50), used_volatile BIGINT, remaining_volatile BIGINT, used_persistent BIGINT, remaining_persistent BIGINT)
+17:59:36.989 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Query execution completed with status: false
+17:59:36.990 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Executing query: create table IF NOT EXISTS SSN_PERFORMANCE_CRUMBS ( crumb_id IDENTITY PRIMARY KEY, posts_per_second BIGINT, gets_per_second BIGINT)
+17:59:36.991 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Query execution completed with status: false
+17:59:36.991 [main] INFO  edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Tables created successfully
+17:59:36.991 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Exit - method : createTablesInDB
+17:59:36.993 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Enter - method :  ## addUser ## {"userName":"UserA","password":"UserA"}
+17:59:36.993 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserA
+17:59:36.994 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@2c6b865
+17:59:36.994 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@2c6b865
+17:59:36.994 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## []
+17:59:36.994 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - No user account exists with userName = UserA
+17:59:36.995 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"UserA","password":"18ee77a279c37de52c4815577e285b85","salt":"735b01571f7d8798fd0201b2c5042518"}
+17:59:36.996 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+17:59:36.996 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+17:59:36.996 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Exit - method : addUser
+17:59:36.996 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Enter - method :  ## addUser ## {"userName":"UserB","password":"UserA"}
+17:59:36.996 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserB
+17:59:36.997 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@4473f04f
+17:59:36.997 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@4473f04f
+17:59:36.997 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## []
+17:59:36.997 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - No user account exists with userName = UserB
+17:59:36.998 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"UserB","password":"9e14d278cdb33a8f606253c9332e5167","salt":"e2803c0fedf260933cbdfc96620ac21f"}
+17:59:36.998 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+17:59:36.998 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+17:59:36.998 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Exit - method : addUser
+17:59:36.999 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Enter - method :  ## addUser ## {"userName":"UserC","password":"UserA"}
+17:59:36.999 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserC
+17:59:36.999 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@17a5f5a5
+17:59:36.999 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@17a5f5a5
+17:59:36.999 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## []
+17:59:36.999 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - No user account exists with userName = UserC
+17:59:37.000 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"UserC","password":"2e2b7b3da357eca4e733af53395324d0","salt":"8d0661eea41796607805427288638688"}
+17:59:37.000 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.001 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+17:59:37.001 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Exit - method : addUser
+17:59:37.001 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Enter - method :  ## addUser ## {"userName":"UserD","password":"UserA"}
+17:59:37.001 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserD
+17:59:37.001 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@7edf564
+17:59:37.002 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@7edf564
+17:59:37.002 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## []
+17:59:37.002 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - No user account exists with userName = UserD
+17:59:37.003 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"UserD","password":"044009ddba12d0755257aa6225bd0b72","salt":"e70f238b3fee0b571a710720d86999a6"}
+17:59:37.003 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.003 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+17:59:37.003 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Exit - method : addUser
+17:59:37.003 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.MessageService - Enter - method :  ## sendMessageChat ## {"content":"UserB said hello to UserD","postedAt":"20141009"}
+17:59:37.004 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserB
+17:59:37.004 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@17897c4d
+17:59:37.004 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@17897c4d
+17:59:37.004 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":2,"userName":"UserB","password":"9e14d278cdb33a8f606253c9332e5167","salt":"e2803c0fedf260933cbdfc96620ac21f","lastStatusCode":"green"}]
+17:59:37.005 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserD
+17:59:37.005 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@433faf4d
+17:59:37.005 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@433faf4d
+17:59:37.006 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":4,"userName":"UserD","password":"044009ddba12d0755257aa6225bd0b72","salt":"e70f238b3fee0b571a710720d86999a6","lastStatusCode":"green"}]
+17:59:37.006 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## save ## {"messageId":0,"content":"UserB said hello to UserD","author":"UserB","messageType":"CHAT","postedAt":"20141009","target":"UserD"}
+17:59:37.007 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.007 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method : save
+17:59:37.007 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.MessageService - Enter - method :  ## sendMessageChat ## {"content":"UserC said hello to UserD","postedAt":"20141009"}
+17:59:37.007 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserC
+17:59:37.007 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@a0e0ab9
+17:59:37.007 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@a0e0ab9
+17:59:37.008 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":3,"userName":"UserC","password":"2e2b7b3da357eca4e733af53395324d0","salt":"8d0661eea41796607805427288638688","lastStatusCode":"green"}]
+17:59:37.008 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserD
+17:59:37.008 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@1fe1fcd7
+17:59:37.008 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@1fe1fcd7
+17:59:37.009 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":4,"userName":"UserD","password":"044009ddba12d0755257aa6225bd0b72","salt":"e70f238b3fee0b571a710720d86999a6","lastStatusCode":"green"}]
+17:59:37.009 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## save ## {"messageId":0,"content":"UserC said hello to UserD","author":"UserC","messageType":"CHAT","postedAt":"20141009","target":"UserD"}
+17:59:37.010 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.010 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method : save
+17:59:37.010 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.SNAService - Enter - method :  ## analysisSocialNetwork ## SNA from 0 to 20150909
+17:59:37.015 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method : loadUsers
+17:59:37.016 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@22c977fc
+17:59:37.016 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@22c977fc
+17:59:37.018 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":1,"userName":"UserA","password":"18ee77a279c37de52c4815577e285b85","salt":"735b01571f7d8798fd0201b2c5042518","lastStatusCode":"green"}, {"userId":2,"userName":"UserB","password":"9e14d278cdb33a8f606253c9332e5167","salt":"e2803c0fedf260933cbdfc96620ac21f","lastStatusCode":"green"}, {"userId":3,"userName":"UserC","password":"2e2b7b3da357eca4e733af53395324d0","salt":"8d0661eea41796607805427288638688","lastStatusCode":"green"}, {"userId":4,"userName":"UserD","password":"044009ddba12d0755257aa6225bd0b72","salt":"e70f238b3fee0b571a710720d86999a6","lastStatusCode":"green"}]
+17:59:37.018 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## getPeriodMessage ## get all message in a time period
+17:59:37.019 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@23cdfde8
+17:59:37.019 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@23cdfde8
+17:59:37.020 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method :  ## processResults ## [{"messageId":1,"content":"UserB said hello to UserD","author":"UserB","messageType":"CHAT","postedAt":"20141009","target":"UserD"}, {"messageId":2,"content":"UserC said hello to UserD","author":"UserC","messageType":"CHAT","postedAt":"20141009","target":"UserD"}]
+17:59:37.022 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.SNAService - Exit - method : analysisSocialNetwork
+17:59:37.024 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Enter - method :  ## addUser ## {"userName":"UserA","password":"UserA"}
+17:59:37.024 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserA
+17:59:37.025 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@4e94e021
+17:59:37.025 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@4e94e021
+17:59:37.025 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## []
+17:59:37.025 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - No user account exists with userName = UserA
+17:59:37.026 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"UserA","password":"3be43ca471c507757f1263a9e44899d0","salt":"4a41617b812eb31cd2f256f5e50f9bc5"}
+17:59:37.026 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.026 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+17:59:37.026 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Exit - method : addUser
+17:59:37.027 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Enter - method :  ## addUser ## {"userName":"UserB","password":"UserA"}
+17:59:37.027 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserB
+17:59:37.027 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@1006bed5
+17:59:37.027 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@1006bed5
+17:59:37.027 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## []
+17:59:37.027 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - No user account exists with userName = UserB
+17:59:37.028 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"UserB","password":"ae31248c2a07d7288b729dd53d5e181f","salt":"357c6e9672a9b658c4a033713ed3d496"}
+17:59:37.028 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.028 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+17:59:37.029 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Exit - method : addUser
+17:59:37.029 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Enter - method :  ## addUser ## {"userName":"UserC","password":"UserA"}
+17:59:37.029 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserC
+17:59:37.029 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@2ada9a2b
+17:59:37.029 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@2ada9a2b
+17:59:37.030 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## []
+17:59:37.030 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - No user account exists with userName = UserC
+17:59:37.030 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"UserC","password":"3e198213ce7342f2deccb689e2edce10","salt":"daa3c5c5893a79b2e79dd8651c305ee4"}
+17:59:37.031 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.031 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+17:59:37.031 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Exit - method : addUser
+17:59:37.031 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Enter - method :  ## addUser ## {"userName":"UserD","password":"UserA"}
+17:59:37.031 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserD
+17:59:37.032 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@75bf9307
+17:59:37.032 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@75bf9307
+17:59:37.032 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## []
+17:59:37.032 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - No user account exists with userName = UserD
+17:59:37.033 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"UserD","password":"bf495120afa70fc3824df63d7d2f8181","salt":"199d4d2a25576eec21cc76c9addb61f9"}
+17:59:37.033 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.033 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+17:59:37.033 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.UserService - Exit - method : addUser
+17:59:37.034 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.MessageService - Enter - method :  ## sendMessageChat ## {"content":"UserB said hello to UserD","postedAt":"20141009"}
+17:59:37.034 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserB
+17:59:37.034 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@744decf5
+17:59:37.034 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@744decf5
+17:59:37.035 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":6,"userName":"UserB","password":"ae31248c2a07d7288b729dd53d5e181f","salt":"357c6e9672a9b658c4a033713ed3d496","lastStatusCode":"green"}]
+17:59:37.035 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserD
+17:59:37.035 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@2800047a
+17:59:37.035 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@2800047a
+17:59:37.036 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":8,"userName":"UserD","password":"bf495120afa70fc3824df63d7d2f8181","salt":"199d4d2a25576eec21cc76c9addb61f9","lastStatusCode":"green"}]
+17:59:37.036 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## save ## {"messageId":0,"content":"UserB said hello to UserD","author":"UserB","messageType":"CHAT","postedAt":"20141009","target":"UserD"}
+17:59:37.037 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.037 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method : save
+17:59:37.037 [main] TRACE edu.cmu.sv.ws.ssnoc.rest.MessageService - Enter - method :  ## sendMessageChat ## {"content":"UserC said hello to UserD","postedAt":"20141009"}
+17:59:37.037 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserC
+17:59:37.037 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@1925fa1a
+17:59:37.037 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@1925fa1a
+17:59:37.038 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":7,"userName":"UserC","password":"3e198213ce7342f2deccb689e2edce10","salt":"daa3c5c5893a79b2e79dd8651c305ee4","lastStatusCode":"green"}]
+17:59:37.038 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## findByName ## UserD
+17:59:37.038 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@c46cddc
+17:59:37.038 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@c46cddc
+17:59:37.039 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":8,"userName":"UserD","password":"bf495120afa70fc3824df63d7d2f8181","salt":"199d4d2a25576eec21cc76c9addb61f9","lastStatusCode":"green"}]
+17:59:37.040 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## save ## {"messageId":0,"content":"UserC said hello to UserD","author":"UserC","messageType":"CHAT","postedAt":"20141009","target":"UserD"}
+17:59:37.040 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Statement executed, and 1 rows inserted.
+17:59:37.040 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method : save
+17:59:37.040 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method : loadUsers
+17:59:37.041 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@7c752ccf
+17:59:37.041 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@7c752ccf
+17:59:37.042 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":5,"userName":"UserA","password":"3be43ca471c507757f1263a9e44899d0","salt":"4a41617b812eb31cd2f256f5e50f9bc5","lastStatusCode":"green"}, {"userId":6,"userName":"UserB","password":"ae31248c2a07d7288b729dd53d5e181f","salt":"357c6e9672a9b658c4a033713ed3d496","lastStatusCode":"green"}, {"userId":7,"userName":"UserC","password":"3e198213ce7342f2deccb689e2edce10","salt":"daa3c5c5893a79b2e79dd8651c305ee4","lastStatusCode":"green"}, {"userId":8,"userName":"UserD","password":"bf495120afa70fc3824df63d7d2f8181","salt":"199d4d2a25576eec21cc76c9addb61f9","lastStatusCode":"green"}]
+17:59:37.042 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## getPeriodMessage ## get all message in a time period
+17:59:37.043 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@70d109de
+17:59:37.043 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@70d109de
+17:59:37.044 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method :  ## processResults ## [{"messageId":3,"content":"UserB said hello to UserD","author":"UserB","messageType":"CHAT","postedAt":"20141009","target":"UserD"}, {"messageId":4,"content":"UserC said hello to UserD","author":"UserC","messageType":"CHAT","postedAt":"20141009","target":"UserD"}]
+2014-10-15 17:59:37,046 DEBUG Shutting down RollingFileManager logs/ssnj.log
+2014-10-15 17:59:37,047 DEBUG Unregistering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@17698cbe
+2014-10-15 17:59:37,048 DEBUG Unregistering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@17698cbe,component=StatusLogger
+2014-10-15 17:59:37,048 DEBUG Unregistering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@17698cbe,component=ContextSelector
+2014-10-15 17:59:37,049 DEBUG Unregistering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@17698cbe,component=Loggers,name=edu.cmu.sv
+2014-10-15 17:59:37,049 DEBUG Unregistering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@17698cbe,component=Appenders,name=Console
+2014-10-15 17:59:37,049 DEBUG Unregistering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@17698cbe,component=Appenders,name=RollingFile
+2014-10-15 17:59:37,050 DEBUG Unregistering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@17698cbe,component=AsyncAppenders,name=Async_Appender

@@ -1,0 +1,9 @@
+15:32:25.730 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Enter - method : createTablesInDB
+15:32:25.731 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"hill","password":"hill"}
+15:32:25.732 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Statement executed, and 1 rows inserted.
+15:32:25.732 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method : save
+15:32:25.732 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method : loadUsers
+15:32:25.733 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@1a6bfc15
+15:32:25.733 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@1a6bfc15
+15:32:25.734 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Exit - method :  ## processResults ## [{"userId":698,"userName":"hill","password":"hill","lastStatusCode":"green"}]
+15:32:25.735 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.UserDAOImpl - Enter - method :  ## save ## {"userId":0,"userName":"hill","password":"hill"}

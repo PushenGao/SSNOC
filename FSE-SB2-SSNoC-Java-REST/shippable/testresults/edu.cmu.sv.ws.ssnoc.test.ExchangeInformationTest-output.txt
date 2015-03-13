@@ -1,0 +1,74 @@
+2014-10-14 15:32:24,144 DEBUG Generated plugins in 0.000019338 seconds
+2014-10-14 15:32:24,146 DEBUG Found Plugin Map at jar:file:/home/pushen/.m2/repository/org/apache/logging/log4j/log4j-core/2.0-rc1/log4j-core-2.0-rc1.jar!/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat
+2014-10-14 15:32:24,338 DEBUG Generated plugins in 0.192525286 seconds
+2014-10-14 15:32:24,413 DEBUG Generated plugins in 0.073031022 seconds
+2014-10-14 15:32:24,419 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%d %p %c{1.} [%t] %m%n", Configuration(SSNj), null, charset="null", alwaysWriteExceptions="null", noConsoleNoAnsi="null")
+2014-10-14 15:32:24,505 DEBUG Generated plugins in 0.085762829 seconds
+2014-10-14 15:32:24,507 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout(%d %p %c{1.} [%t] %m%n), null, target="SYSTEM_OUT", name="Console", follow="null", ignoreExceptions="null")
+2014-10-14 15:32:24,508 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%d %p %c{1.} [%t] %m%n", Configuration(SSNj), null, charset="null", alwaysWriteExceptions="null", noConsoleNoAnsi="null")
+2014-10-14 15:32:24,509 DEBUG Calling createPolicy on class org.apache.logging.log4j.core.appender.rolling.TimeBasedTriggeringPolicy for element TimeBasedTriggeringPolicy with params(interval="null", modulate="null")
+2014-10-14 15:32:24,509 DEBUG Calling createPolicy on class org.apache.logging.log4j.core.appender.rolling.SizeBasedTriggeringPolicy for element SizeBasedTriggeringPolicy with params(size="5 MB")
+2014-10-14 15:32:24,510 DEBUG Calling createPolicy on class org.apache.logging.log4j.core.appender.rolling.CompositeTriggeringPolicy for element Policies with params(Policies={TimeBasedTriggeringPolicy, SizeBasedTriggeringPolicy(size=5242880)})
+2014-10-14 15:32:24,511 DEBUG Calling createStrategy on class org.apache.logging.log4j.core.appender.rolling.DefaultRolloverStrategy for element DefaultRolloverStrategy with params(max="200", min="null", fileIndex="null", compressionLevel="null", Configuration(SSNj))
+2014-10-14 15:32:24,513 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.RollingFileAppender for element RollingFile with params(fileName="logs/ssnj.log", filePattern="logs/${date:yyyy-MM}/ssnj-%d{MM-dd-yyyy}-%i.log.gz", append="null", name="RollingFile", bufferedIO="null", immediateFlush="null", Policies(CompositeTriggeringPolicy{TimeBasedTriggeringPolicy, SizeBasedTriggeringPolicy(size=5242880)}), DefaultRolloverStrategy(DefaultRolloverStrategy(min=1, max=200)), PatternLayout(%d %p %c{1.} [%t] %m%n), null, ignoreExceptions="null", advertise="null", advertiseURI="null", Configuration(SSNj))
+2014-10-14 15:32:24,513 DEBUG Starting RollingFileManager logs/ssnj.log
+2014-10-14 15:32:24,587 DEBUG Generated plugins in 0.073306835 seconds
+2014-10-14 15:32:24,588 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element AppenderRef with params(ref="RollingFile", level="null", null)
+2014-10-14 15:32:24,590 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.AsyncAppender for element Async with params(AppenderRef={RollingFile}, errorRef="null", blocking="null", bufferSize="null", name="Async_Appender", includeLocation="null", null, Configuration(SSNj), ignoreExceptions="null")
+2014-10-14 15:32:24,590 DEBUG Calling createAppenders on class org.apache.logging.log4j.core.config.plugins.AppendersPlugin for element Appenders with params(Appenders={Console, RollingFile, Async_Appender})
+2014-10-14 15:32:24,591 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="Async_Appender", level="null", null)
+2014-10-14 15:32:24,592 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig for element logger with params(additivity="null", level="trace", name="edu.cmu.sv", includeLocation="null", AppenderRef={Async_Appender}, Properties={}, Configuration(SSNj), null)
+2014-10-14 15:32:24,593 DEBUG Calling createLoggers on class org.apache.logging.log4j.core.config.plugins.LoggersPlugin for element Loggers with params(Loggers={edu.cmu.sv})
+2014-10-14 15:32:24,593 WARN No Root logger was configured, creating default ERROR-level Root logger with Console appender
+2014-10-14 15:32:24,658 DEBUG Generated plugins in 0.064358273 seconds
+2014-10-14 15:32:24,695 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@129719f4
+2014-10-14 15:32:24,697 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@129719f4,component=StatusLogger
+2014-10-14 15:32:24,697 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@129719f4,component=ContextSelector
+2014-10-14 15:32:24,698 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@129719f4,component=Loggers,name=edu.cmu.sv
+2014-10-14 15:32:24,699 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@129719f4,component=Appenders,name=Console
+2014-10-14 15:32:24,699 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@129719f4,component=Appenders,name=RollingFile
+2014-10-14 15:32:24,700 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@129719f4,component=AsyncAppenders,name=Async_Appender
+2014-10-14 15:32:24,700 DEBUG Reconfiguration completed
+15:32:24.708 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Enter - method : createTablesInDB
+15:32:24.711 [main] INFO  edu.cmu.sv.ws.ssnoc.data.util.ConnectionPoolFactory - Creating a new ConnectionPoolFactory singleton instance.
+15:32:24.711 [main] INFO  edu.cmu.sv.ws.ssnoc.data.util.H2ConnectionPoolImpl - Initializing the connection pool ... 
+15:32:25.090 [main] TRACE edu.cmu.sv.ws.ssnoc.common.utils.PropertyUtils - Loading properties files ...
+15:32:25.092 [main] WARN  edu.cmu.sv.ws.ssnoc.common.utils.PropertyUtils - Could not load the properties file. Will try to initialize with system default values ...
+15:32:25.092 [main] WARN  edu.cmu.sv.ws.ssnoc.common.utils.PropertyUtils - Initializing DB_CONN_URL to system default values ...
+15:32:25.092 [main] WARN  edu.cmu.sv.ws.ssnoc.common.utils.PropertyUtils - Initializing DB_USERNAME to system default values ...
+15:32:25.092 [main] WARN  edu.cmu.sv.ws.ssnoc.common.utils.PropertyUtils - Initializing DB_USERNAME to system default values ...
+15:32:25.092 [main] WARN  edu.cmu.sv.ws.ssnoc.common.utils.PropertyUtils - Initializing DB_CONNECTION_POOL_SIZE to system default values ...
+15:32:25.092 [main] WARN  edu.cmu.sv.ws.ssnoc.common.utils.PropertyUtils - Initializing ADMIN_CODE to system default values ...
+15:32:25.112 [main] INFO  edu.cmu.sv.ws.ssnoc.data.util.H2ConnectionPoolImpl - Connection pool initialized successfully.
+15:32:25.274 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Enter - method :  ## doesTableExistInDB ## SSN_USERS
+15:32:25.292 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Exit - method :  ## doesTableExistInDB ## true
+15:32:25.292 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Enter - method :  ## doesTableExistInDB ## SSN_USERS
+15:32:25.295 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Exit - method :  ## doesTableExistInDB ## true
+15:32:25.295 [main] INFO  edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Tables already exist in database. Not performing any action.
+15:32:25.295 [main] TRACE edu.cmu.sv.ws.ssnoc.data.util.DBUtils - Exit - method : createTablesInDB
+15:32:25.298 [main] INFO  edu.cmu.sv.ws.ssnoc.data.dao.DAOFactory - Creating a new DAOFactory singleton instance.
+15:32:25.338 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## save ## {"messageId":0,"content":"Need Help","messageType":"WALL"}
+15:32:25.341 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Statement executed, and 1 rows inserted.
+15:32:25.341 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method : save
+15:32:25.341 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## findMessageWall ## Messagetype WALL
+15:32:25.341 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@103a084d
+15:32:25.342 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@103a084d
+15:32:25.343 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method :  ## processResults ## [{"messageId":2,"content":"Need Help","messageType":"WALL"}]
+15:32:25.343 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## findId ## 2
+15:32:25.344 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@2d60d013
+15:32:25.344 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@2d60d013
+15:32:25.344 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method :  ## processResults ## [{"messageId":2,"content":"Need Help","messageType":"WALL"}]
+15:32:25.347 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## save ## {"messageId":0,"content":"Hey How r you?","messageType":"WALL"}
+15:32:25.347 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Statement executed, and 1 rows inserted.
+15:32:25.347 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method : save
+15:32:25.348 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## findMessageWall ## Messagetype WALL
+15:32:25.348 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@6bc31e6d
+15:32:25.348 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@6bc31e6d
+15:32:25.349 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method :  ## processResults ## [{"messageId":3,"content":"Hey How r you?","messageType":"WALL"}]
+15:32:25.350 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## save ## {"messageId":0,"content":"Need Help","author":"c1","messageType":"WALL"}
+15:32:25.350 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Statement executed, and 1 rows inserted.
+15:32:25.350 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method : save
+15:32:25.350 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## findByAORT ## c1
+15:32:25.351 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Enter - method :  ## processResults ## com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@5702bd60
+15:32:25.351 [main] DEBUG edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Executing stmt = com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy@5702bd60
+15:32:25.351 [main] TRACE edu.cmu.sv.ws.ssnoc.data.dao.MessageDAOImpl - Exit - method :  ## processResults ## [{"messageId":4,"content":"Need Help","author":"c1","messageType":"WALL"}]
